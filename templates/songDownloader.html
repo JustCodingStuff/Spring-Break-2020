@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Login Page {% endblock %}
+
+{% block header %}
+<div class="jumbotron">
+    <h1 class="text-center">YouTube Song Downloader</h1>
+</div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <h5 class="text-center">{{msg}}</h5>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="w-50">
+        <article class = "card-body">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" name="songName" placeholder="Enter Song Name" type="songName" value="{{songName if songName}}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" style = "margin: auto; width:50%">Download</button>
+                </div>
+            </form>
+            </form>
+        </article>
+    </div>
+</div>
+{% endblock %}
